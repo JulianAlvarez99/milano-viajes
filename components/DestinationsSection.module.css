@@ -1,0 +1,40 @@
+.section {
+  padding: var(--space-xl) 0;
+  background: var(--color-white);
+}
+
+.header {
+  margin-bottom: var(--space-lg);
+}
+
+/* Desktop: 3-column CSS Grid */
+.desktopGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Mobile: hide desktop grid, show carousel */
+.mobileCarousel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  .desktopGrid {
+    display: none;
+  }
+
+  .mobileCarousel {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .desktopGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

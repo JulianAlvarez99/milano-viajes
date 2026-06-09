@@ -1,0 +1,80 @@
+.button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: waPulse 5s ease-in-out infinite;
+}
+
+.button:hover {
+  transform: scale(1.12);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Tooltip — desktop only */
+.tooltip {
+  position: absolute;
+  right: 72px;
+  white-space: nowrap;
+  background: rgba(10, 31, 63, 0.92);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: rgba(10, 31, 63, 0.92);
+  border-right: none;
+}
+
+.button:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes waPulse {
+  0%, 90%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35); }
+  45%            { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+}
+
+/* Mobile: larger touch target, no tooltip */
+@media (max-width: 768px) {
+  .button {
+    width: 56px;
+    height: 56px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .tooltip {
+    display: none;
+  }
+}

@@ -1,0 +1,126 @@
+.section {
+  padding: var(--space-xl) 0;
+  background: var(--color-white);
+}
+
+.header {
+  margin-bottom: var(--space-md);
+}
+
+.handle {
+  display: inline-block;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-copper);
+  transition: opacity 0.2s ease;
+}
+
+.handle:hover {
+  opacity: 0.75;
+}
+
+/* 4-column grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.625rem;
+  margin-bottom: var(--space-md);
+}
+
+/* Photo item */
+.photoItem {
+  display: block;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--color-navy);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photoItem:hover .image {
+  transform: scale(1.06);
+}
+
+/* Hover overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(196, 134, 58, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photoItem:hover .overlay {
+  opacity: 1;
+}
+
+.igIcon {
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+/* Bottom CTA */
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+.igButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--color-copper);
+  color: var(--color-copper);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.igButton svg {
+  width: 26px;
+  height: 26px;
+}
+
+.igButton:hover {
+  background: var(--color-copper);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
