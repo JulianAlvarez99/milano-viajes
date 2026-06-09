@@ -10,11 +10,11 @@
 /* --- CSS Custom Properties --- */
 :root {
   /* Brand Colors */
-  --color-navy:    #0A1F3F;
-  --color-copper:  #C4863A;
-  --color-beige:   #E8DFD0;
-  --color-teal:    #4A907A;
-  --color-white:   #FFFFFF;
+  --color-navy: #0A1F3F;
+  --color-copper: #C4863A;
+  --color-beige: #E8DFD0;
+  --color-teal: #4A907A;
+  --color-white: #FFFFFF;
   --color-navy-80: rgba(10, 31, 63, 0.85);
   --color-navy-50: rgba(10, 31, 63, 0.50);
   --color-copper-10: rgba(196, 134, 58, 0.10);
@@ -22,46 +22,48 @@
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Fluid Type Scale */
-  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm:   clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
   --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-  --text-lg:   clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
-  --text-xl:   clamp(1.375rem, 1.2rem + 0.875vw, 1.75rem);
-  --text-2xl:  clamp(1.75rem, 1.5rem + 1.25vw, 2.25rem);
-  --text-3xl:  clamp(2.25rem, 1.8rem + 2.25vw, 3.5rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
+  --text-xl: clamp(1.375rem, 1.2rem + 0.875vw, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.5rem + 1.25vw, 2.25rem);
+  --text-3xl: clamp(2.25rem, 1.8rem + 2.25vw, 3.5rem);
   --text-hero: clamp(2.5rem, 2rem + 3vw, 5rem);
 
   /* Spacing Scale */
-  --space-xs:  0.5rem;
-  --space-sm:  1rem;
-  --space-md:  2rem;
-  --space-lg:  4rem;
-  --space-xl:  6rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
   --space-2xl: 10rem;
 
   /* Animation */
-  --dur-fast:   0.25s;
-  --dur-normal: 0.6s;
-  --dur-slow:   0.9s;
-  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.8s;
+  --dur-normal: 2.8s;
+  --dur-slow: 3.5s;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
 
   /* Layout */
-  --max-width:  1200px;
-  --radius-sm:  6px;
-  --radius-md:  12px;
-  --radius-lg:  20px;
-  --shadow-sm:  0 2px 8px rgba(10,31,63,0.08);
-  --shadow-md:  0 8px 30px rgba(10,31,63,0.12);
-  --shadow-lg:  0 20px 60px rgba(10,31,63,0.18);
-  --shadow-card:0 4px 20px rgba(10,31,63,0.10);
+  --max-width: 1200px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(10, 31, 63, 0.08);
+  --shadow-md: 0 8px 30px rgba(10, 31, 63, 0.12);
+  --shadow-lg: 0 20px 60px rgba(10, 31, 63, 0.18);
+  --shadow-card: 0 4px 20px rgba(10, 31, 63, 0.10);
 }
 
 /* --- Modern Reset --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -83,7 +85,8 @@ body {
   overflow-x: hidden;
 }
 
-img, video {
+img,
+video {
   display: block;
   max-width: 100%;
 }
@@ -100,7 +103,8 @@ button {
   font-family: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -212,7 +216,8 @@ ul, ol {
     transform var(--dur-fast) var(--ease-out),
     box-shadow var(--dur-fast) var(--ease-out);
   cursor: pointer;
-  min-height: 48px; /* mobile touch target */
+  min-height: 48px;
+  /* mobile touch target */
 }
 
 .btn-primary:hover {
@@ -253,6 +258,7 @@ ul, ol {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -260,35 +266,75 @@ ul, ol {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes bounceIn {
-  0%   { opacity: 0; transform: scale(0.8) translateY(20px); }
-  70%  { transform: scale(1.04) translateY(-4px); }
-  100% { opacity: 1; transform: scale(1) translateY(0); }
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+
+  70% {
+    transform: scale(1.04) translateY(-4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 @keyframes bobDown {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 @keyframes pulse {
-  0%    { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-  70%   { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
-  100%  { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* --- Accessibility: Reduced Motion --- */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
