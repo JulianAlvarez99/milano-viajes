@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
-const WA_NUMBER = '5499999999999';
+const WA_NUMBER = '5492236998278';
 const WA_MESSAGE = encodeURIComponent('Hola! Me interesa consultar por un viaje');
 
 const navLinks = [
